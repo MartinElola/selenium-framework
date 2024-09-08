@@ -3,6 +3,7 @@ package base;
 import base.asserts.SeleniumAsserts;
 import base.buttons.SeleniumButtons;
 import base.driver.DriverActions;
+import base.props.SeleniumProps;
 import base.texts.SeleniumTexts;
 import base.utils.Substep;
 import base.visibility.SeleniumVisibility;
@@ -24,7 +25,6 @@ public class SeleniumActions {
     private final SeleniumAsserts assertsActions;
     private final SeleniumTexts textsActions;
     private final SeleniumVisits visitsActions;
-
 
     public SeleniumActions() {
         this.driver = DriverActions.getDriver();
@@ -144,6 +144,5 @@ public class SeleniumActions {
         }));
         return this;
     }
-
 
 }

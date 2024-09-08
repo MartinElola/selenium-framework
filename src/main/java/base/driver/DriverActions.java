@@ -14,7 +14,6 @@ public class DriverActions {
     private static WebDriver driver;
     private static Properties props = new Properties();
 
-
     public DriverActions() {
         driver = getDriver();
     }
