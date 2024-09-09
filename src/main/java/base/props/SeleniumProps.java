@@ -8,7 +8,7 @@ import java.util.Properties;
 
 public class SeleniumProps {
 
-    public String getProperty(String fileName, String key){
+    public static String getProperty(String fileName, String key){
         // Cargo el archivo de properties de esta manera para arrojar una excepción si no se puede cargar
         Properties props = new Properties();
         try {

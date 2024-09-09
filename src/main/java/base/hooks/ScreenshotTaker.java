@@ -15,8 +15,6 @@ import java.io.IOException;
 
 public class ScreenshotTaker {
 
-    private static SeleniumActions base;
-
     @AfterStep
     public static void take(Scenario scenario) throws IOException {
         WebDriver driver = DriverActions.getDriver();
