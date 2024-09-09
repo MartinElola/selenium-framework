@@ -20,7 +20,7 @@ Desde una consola de comandos a elección ejecutar en la ruta principal del proy
 
 ## Reportería
 **Los reportes serán generados automáticamente luego de una ejecución en la carpeta de target, en la raíz del proyecto. Allí encontraremos nuestro reporte cucumber-reports.html con capturas adjuntas en caso de falla.
-Adicionalmente contamos con el directorio target\screenshots donde se guardaran las capturas también en caso de falla, por si queremos verlas por separadas.**
+Adicionalmente contamos con el directorio target\screenshots donde se guardaran las capturas también en caso de falla, por si queremos verlas por separado.**
 
 
 
