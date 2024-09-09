@@ -40,6 +40,10 @@ public class SeleniumActions {
         return this.driver;
     }
 
+    /* Por cada uno de los métodos implementados en las clases, los agrego en forma de substeps a la lista, para luego
+    * ir ejecutandolos en orden... */
+
+
     //////////////////////////////////////////////////////////
     /////////////////// Framework Methods ////////////////////
     //////////////////////////////////////////////////////////
@@ -49,7 +53,7 @@ public class SeleniumActions {
             try {
                 substep.runnable.run();
             } catch (Throwable e) {
-                e.printStackTrace();
+                throw new RuntimeException(e);
             }
         });
     }
@@ -140,6 +144,13 @@ public class SeleniumActions {
     public SeleniumActions visit(String url) {
         substeps.add(new Substep(() -> {
             visitsActions.visit(url);
+        }));
+        return this;
+    }
+
+    public SeleniumActions checkUrl(String url) {
+        substeps.add(new Substep(() -> {
+            visitsActions.checkUrl(url);
         }));
         return this;
     }

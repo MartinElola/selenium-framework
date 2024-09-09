@@ -9,6 +9,8 @@ public class LoginPageActions {
 
     private final String URL_LOGIN_SWAGLABS = "https://www.saucedemo.com/";
 
+    /* Les damos a los métodos una única responsabilidad.. completar un campo, hacer un click, etc, etc...*/
+
     public void visitarPagina() {
         Selenium()
                 .visit(URL_LOGIN_SWAGLABS)
@@ -23,6 +25,9 @@ public class LoginPageActions {
     }
 
     public void completarCampoUsername(String usuario) {
+        /* Forma Nro 1 de completar un campo: esperando a que el elemento en cuestión este disponible para
+        * interactuar...*/
+
         Selenium()
                 .waitForElementToAppear(txtCampoUsuario, 30)
                 .waitType(txtCampoUsuario, usuario, 30)
@@ -30,8 +35,9 @@ public class LoginPageActions {
     }
 
     public void completarCampoPassword(String contrasenia) {
+        /* Forma Nro 2 de completar un campo: directamente completando el mismo, presuponiendo que el campo ya se
+        * encuentra disponible... */
         Selenium()
-                .waitForElementToBeEnabled(txtCampoContrasenia, 30)
                 .typeKeys(txtCampoContrasenia, contrasenia)
                 .perform();
     }

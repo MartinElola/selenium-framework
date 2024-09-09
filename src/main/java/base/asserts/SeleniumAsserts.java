@@ -4,7 +4,6 @@ import base.SeleniumActions;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
-
 public class SeleniumAsserts {
 
     private SeleniumActions base;
@@ -15,9 +14,8 @@ public class SeleniumAsserts {
 
     public SeleniumAsserts assertText(By locator, String text) {
         String actualText = base.getDriver().findElement(locator).getText();
-        if (!actualText.equals(text)) {
-            throw new AssertionError("El texto [" + actualText + "] no es igual a [" + text + "]");
-        }
+        Assert.assertEquals(actualText, text);
+
         return this;
     }
 

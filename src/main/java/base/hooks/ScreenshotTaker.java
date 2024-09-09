@@ -25,7 +25,7 @@ public class ScreenshotTaker {
             if (! destiny.exists()) {
                 destiny.mkdir();
             }
-            FileUtils.copyFile(file, new File(destiny.toString() + File.separator + scenario.getId() + ".png"));
+            FileUtils.copyFile(file, new File(destiny.toString() + File.separator + scenario.getName() + ".png"));
         }
     }
 
