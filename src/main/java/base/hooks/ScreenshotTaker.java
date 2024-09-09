@@ -18,20 +18,21 @@ public class ScreenshotTaker {
     @AfterStep
     public static void take(Scenario scenario) throws IOException {
         WebDriver driver = DriverActions.getDriver();
-        if(scenario.isFailed()) {
-            File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-            saveScreenshotPNG(driver);
-            File destiny = new File("target" + File.separator + "screenshots");
-            if (! destiny.exists()) {
-                destiny.mkdir();
-            }
-            FileUtils.copyFile(file, new File(destiny.toString() + File.separator + scenario.getName() + ".png"));
-        }
-    }
 
-    @Attachment(value = "Page screenshot", type = "image/png")
-    private static File saveScreenshotPNG(WebDriver driver) {
-        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        if (scenario.isFailed()) {
+            // Capturo la pantalla como byte array para posteriormente adjuntarla en el reporte html de cucumber..
+            byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+
+            File destiny = new File("target" + File.separator + "screenshots");
+            if (!destiny.exists()) {
+                destiny.mkdir();  // Creo el directorio si no existe
+            }
+            File screenshotFile = new File(destiny.toString() + File.separator + scenario.getName() + ".png");
+            FileUtils.writeByteArrayToFile(screenshotFile, screenshot);
+
+            // Adjunto la captura de pantalla al reporte de Cucumber
+            scenario.attach(screenshot, "image/png", "Screenshot");
+        }
     }
 
 }
