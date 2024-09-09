@@ -1,8 +1,9 @@
 # language: es
 @AgregadoProductos
 @AgregadoProductos_5
-Característica: Login en Swag Labs con un usuario estandar
-  Se realiza un inicio de sesión con usuario standard en la página de Swag Labs.
+Característica: Agregar productos al carrito y eliminarlos
+    Se agregan productos al carrito y se eliminan productos del mismo.
+
 
   Antecedentes: Login con 'STANDARD_USER'
     Dada la pagina de login
