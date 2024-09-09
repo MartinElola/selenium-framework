@@ -1,6 +1,6 @@
 # language: es
 @ServiciosWEB
-@LoginStandardUser
+@ServicioML
 Característica: Prueba de Servicio Web - Mercado Libre
   Obtenemos los distintos departamentos de Mercado Libre.
 
