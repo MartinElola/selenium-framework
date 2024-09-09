@@ -8,7 +8,7 @@ import org.testng.annotations.DataProvider;
         plugin = {"pretty","io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},
         publish = false,
         features = "src/test/resources/features",
-        glue = {"pages.tasks", "hooks"}
+        glue = {"pages.tasks", "base.hooks"}
 //        tags = "@Regression"
 )
 public class TestRunner extends AbstractTestNGCucumberTests {

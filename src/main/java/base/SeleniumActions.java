@@ -28,9 +28,8 @@ public class SeleniumActions {
 
     public SeleniumActions() {
         this.driver = DriverActions.getDriver();
-
-        this.textsActions = new SeleniumTexts(this);
         this.driverActions = new DriverActions();
+        this.textsActions = new SeleniumTexts(this);
         this.visibilityActions = new SeleniumVisibility(this);
         this.buttonsActions = new SeleniumButtons(this);
         this.assertsActions = new SeleniumAsserts(this);

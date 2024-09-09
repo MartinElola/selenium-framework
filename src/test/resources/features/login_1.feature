@@ -1,7 +1,5 @@
 # language: es
-@Login
-@HolaMundo
-@Pruebas
+@LoginStandardUser
 Característica: Login de Gmail
   Se realiza un login en Gmail para probar las funcionalidades basicas del framework
 
