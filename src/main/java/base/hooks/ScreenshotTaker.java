@@ -1,10 +1,8 @@
 package base.hooks;
 
-import base.SeleniumActions;
 import base.driver.DriverActions;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Scenario;
-import io.qameta.allure.Attachment;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -19,7 +17,7 @@ public class ScreenshotTaker {
     public static void take(Scenario scenario) throws IOException {
         WebDriver driver = DriverActions.getDriver();
 
-        if (scenario.isFailed()) {
+        if (scenario.isFailed() && !scenario.getSourceTagNames().contains("@Api")) {
             // Capturo la pantalla como byte array para posteriormente adjuntarla en el reporte html de cucumber..
             byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 
