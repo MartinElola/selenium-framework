@@ -1,5 +1,3 @@
-# Challenge - Crowdar
-
 #### El presente proyecto es un framework de Selenium realizado en Java 11 que utiliza TestNG como herramienta de ejecución. Además, cuenta también con un pequeño framework hecho en RestAssured que nos permite realizar peticiones básicas. Esta configurado con Maven a fin de poder gestionar bien las dependencias y ejecutar las pruebas de manera eficiente.
 
 ## Preparación del entorno:
